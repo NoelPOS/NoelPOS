@@ -1,5 +1,5 @@
 # 💫 About Me:
- Computer Science Student at Assumption University of Thailand seeking for an internship at the moment
+ Computer Science Student at Assumption University of Thailand 
 
 
 ## 🌐 Socials:
