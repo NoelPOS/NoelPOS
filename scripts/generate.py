@@ -11,6 +11,7 @@ import datetime as dt
 import json
 import re
 import urllib.request
+import zlib
 from html import escape
 from pathlib import Path
 
@@ -83,6 +84,15 @@ def window(t, height, title, body, label):
 <path d="M0.5 {BAR} V10.5 a10 10 0 0 1 10 -10 H{W - 10.5} a10 10 0 0 1 10 10 V{BAR} Z" fill="{t['bar']}" stroke="{t['border']}"/>
 <circle cx="22" cy="20" r="6" fill="#ff5f57"/><circle cx="42" cy="20" r="6" fill="#febc2e"/><circle cx="62" cy="20" r="6" fill="#28c840"/>
 <text x="{W / 2}" y="25" text-anchor="middle" font-family="{FONT}" font-size="12" fill="{t['muted']}">{escape(title)}</text>
+<style>
+/* Visible by default: the animations only hide things while they wait their turn,
+   so a viewer that never runs them still gets the finished card. */
+.r {{ animation: show 0.01s linear both; }}
+.c {{ animation: blink 1.1s step-end infinite; }}
+@keyframes show {{ from {{ opacity: 0; }} to {{ opacity: 1; }} }}
+@keyframes blink {{ 0%, 49% {{ opacity: 1; }} 50%, 100% {{ opacity: 0; }} }}
+@media (prefers-reduced-motion: reduce) {{ .r, .c, .k {{ animation: none !important; }} }}
+</style>
 <g font-family="{FONT}" font-size="{FS}" style="white-space:pre">
 {body}
 </g>
@@ -91,30 +101,40 @@ def window(t, height, title, body, label):
 
 
 def reveal(at):
-    return f'<set attributeName="opacity" to="1" begin="{at:.2f}s" fill="freeze"/>'
+    """Attributes that keep an element hidden until `at` seconds."""
+    return f'class="r" style="animation-delay:{at:.2f}s"'
 
 
 def typed(x, y, t, prompt, command, start, per_char=0.045):
-    """A prompt followed by a command that types itself out; returns (svg, end time)."""
-    chars = "".join(
-        f'<tspan visibility="hidden">{escape(c)}<set attributeName="visibility" to="visible" '
-        f'begin="{start + i * per_char:.3f}s" fill="freeze"/></tspan>'
-        for i, c in enumerate(command)
-    )
-    svg = (f'<text x="{x}" y="{y}" xml:space="preserve"><tspan fill="{t["prompt"]}">{escape(prompt)}</tspan>'
-           f'<tspan fill="{t["text"]}">{chars}</tspan></text>')
-    return svg, start + len(command) * per_char
+    """A prompt followed by a command that types itself out; returns (svg, end time).
+
+    CSS only (GitHub plays CSS animations in README images): a block the
+    colour of the background sits over the command and steps right one
+    character at a time.
+    """
+    cw = FS * 0.6
+    cx = x + len(prompt) * cw
+    width = len(command) * cw + 12
+    dur = len(command) * per_char
+    name = f"type{zlib.crc32(f'{command}{start}'.encode())}"
+    svg = (f'<text x="{x}" y="{y}" fill="{t["prompt"]}" xml:space="preserve">{escape(prompt)}</text>'
+           f'<text x="{cx:.1f}" y="{y}" fill="{t["text"]}" xml:space="preserve">{escape(command)}</text>'
+           f'<style>@keyframes {name} {{ from {{ transform: translateX(0); }} '
+           f'to {{ transform: translateX({width:.1f}px); }} }}</style>'
+           f'<rect class="k" x="{cx - 1:.1f}" y="{y - FS:.1f}" width="{width:.1f}" height="{FS + 6}" fill="{t["bg"]}" '
+           f'style="transform: translateX({width:.1f}px); '
+           f'animation: {name} {dur:.2f}s steps({len(command)}) {start:.2f}s both"/>')
+    return svg, start + dur
 
 
 def line(x, y, spans, at):
     inner = "".join(f'<tspan fill="{color}">{escape(text)}</tspan>' for text, color in spans)
-    return f'<text x="{x}" y="{y}" opacity="0" xml:space="preserve">{inner}{reveal(at)}</text>'
+    return f'<text x="{x}" y="{y}" {reveal(at)} xml:space="preserve">{inner}</text>'
 
 
 def cursor(t, x, y, at):
-    return (f'<rect x="{x}" y="{y - FS + 2}" width="8" height="{FS + 2}" fill="{t["prompt"]}" opacity="0">'
-            f'{reveal(at)}<animate attributeName="fill-opacity" values="1;0;1" dur="1.1s" '
-            f'begin="{at:.2f}s" repeatCount="indefinite" calcMode="discrete"/></rect>')
+    return (f'<g {reveal(at)}><rect class="c" x="{x:.1f}" y="{y - FS + 2}" width="8" height="{FS + 2}" '
+            f'fill="{t["prompt"]}"/></g>')
 
 
 # ---------------------------------------------------------------- hello card
@@ -160,7 +180,7 @@ def hello(t):
             parts.append(line(x, y, row, at))
         at += 0.07
     y += LH * 1.6
-    parts.append(f'<text x="{x}" y="{y}" opacity="0" fill="{t["prompt"]}">noel@bangkok:~$ {reveal(at + 0.2)}</text>')
+    parts.append(f'<text x="{x}" y="{y}" fill="{t["prompt"]}" {reveal(at + 0.2)} xml:space="preserve">noel@bangkok:~$ </text>')
     parts.append(cursor(t, x + 16 * FS * 0.6 + 2, y, at + 0.2))
     height = int(y + PAD + 4)
     label = ("Terminal: curl -i localhost:8080/v1/engineers/noel returns HTTP 200 with JSON - "
@@ -184,7 +204,7 @@ def neofetch(t, stats, today):
     dots = []
     for y, xs in sorted(rows.items()):
         circles = "".join(f'<circle cx="{px + x * pitch:.1f}" cy="{py + y * pitch:.1f}" r="1.45"/>' for x in xs)
-        dots.append(f'<g opacity="0">{reveal(done + 0.3 + y * 0.018)}{circles}</g>')
+        dots.append(f'<g {reveal(done + 0.3 + y * 0.018)}>{circles}</g>')
     art_w = portrait["w"] * pitch
     art_h = portrait["h"] * pitch
 
@@ -217,11 +237,11 @@ def neofetch(t, stats, today):
     iy += 8
     blocks = "".join(f'<rect x="{ix + i * 26}" y="{iy - 12}" width="22" height="14" rx="2" fill="{c}"/>'
                      for i, c in enumerate(PALETTE))
-    out.append(f'<g opacity="0">{reveal(at)}{blocks}</g>')
+    out.append(f'<g {reveal(at)}>{blocks}</g>')
 
     bottom = max(py + art_h, iy) + 14
-    out.append(f'<text x="{PAD}" y="{bottom + LH}" opacity="0" font-size="11" fill="{t["muted"]}">'
-               f'refreshed {today.isoformat()} by a GitHub Action{reveal(at + 0.2)}</text>')
+    out.append(f'<text x="{PAD}" y="{bottom + LH}" font-size="11" fill="{t["muted"]}" {reveal(at + 0.2)}>'
+               f'refreshed {today.isoformat()} by a GitHub Action</text>')
     height = int(bottom + LH + PAD)
 
     body = (cmd + f'\n<g fill="{t["dot"]}">' + "".join(dots) + "</g>\n" + "\n".join(out))
