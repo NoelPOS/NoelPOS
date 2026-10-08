@@ -14,18 +14,13 @@
 
 ---
 
-I build backends that stay correct under pressure: bookings that can't be oversold, payments that can't be charged twice, and notifications that arrive exactly once. I've spent 2+ years shipping and running production platforms, and I write down the decisions behind them.
-
-**Right now**
-- 💼 Software Developer at **EffortX Foundation**
-- 🛠️ Building **[VetMiMi](https://vetmimi-next.vercel.app)**: booking and WebRTC video sessions on a Go API
-- 🤝 Open to **backend and full-stack engineering roles**
+I build backends that stay correct under pressure: bookings that can't be oversold, payments that can't be charged twice, and notifications that arrive exactly once. I've spent 2+ years shipping and running production platforms, from design through deployment and on-call debugging.
 
 ## 💼 Experience
 
 | When | Role | Highlights |
 |---|---|---|
-| **Sep 2025 – now** | **Software Developer** · [EffortX Foundation](https://www.effort.foundation) · remote | Next.js, React Native, NestJS and PostgreSQL for 1,000+ users · Redis/BullMQ background jobs · RBAC, JWT and MFA/TOTP · **cut p95 API latency from 850 ms to 350 ms** |
+| **Sep 2025 – now** | **Software Developer** · [EffortX Foundation](https://www.effort.foundation) · remote | Next.js, React Native, NestJS and PostgreSQL · Redis/BullMQ background jobs · RBAC, JWT and MFA/TOTP · **cut p95 API latency from 850 ms to 350 ms** |
 | **Jul – Sep 2026** | **QA Automation Intern** · KBTG (Kasikorn Business-Technology Group) | Robot Framework and Python suites for SIT, UAT and regression testing of enterprise financial apps |
 | **Apr 2025 – Mar 2026** | **Full Stack Developer** · [Kiddee Lab Thailand](https://www.kiddeelab.co.th) | LMS/CRM that replaced paper workflows for **800+ users** · migrated and reconciled **10,000+ legacy records** |
 | **Jun 2023 – Jun 2025** | **WordPress Developer & Teaching Assistant** · Assumption University | Merged two legacy sites into one platform for 1,000+ students · mentored 20+ students in DSA and OOP |
@@ -45,7 +40,7 @@ LINE-integrated van seat booking for Assumption University.
 - Terraform on AWS (ECS Fargate across 2 AZs, ALB, RDS Multi-AZ, CloudFront), with 9 CI checks including Playwright
 
 `Spring Boot` `React` `PostgreSQL` `Terraform` `AWS`
-<br/>[Live demo](https://auvan.duckdns.org) · [Code](https://github.com/NoelPOS/au-van-platform) · [15 ADRs](https://github.com/NoelPOS/au-van-platform/tree/main/docs/adr)
+<br/>[Live demo](https://auvan.duckdns.org) · [Code](https://github.com/NoelPOS/au-van-platform)
 
 </td>
 <td width="50%" valign="top">
@@ -58,74 +53,11 @@ Booking and online sessions for an art therapy practice in Sydney.
 - Bilingual Next.js site (English and Burmese) plus an admin console, with background jobs on Redis
 
 `Go` `Next.js` `PostgreSQL` `Redis` `WebRTC`
-<br/>[Live](https://vetmimi-next.vercel.app) · [API](https://github.com/VetMiMi/vetmimi-api) · [Web](https://github.com/VetMiMi/vetmimi-next) · [9 ADRs](https://github.com/VetMiMi/vetmimi-api/tree/main/docs/adr)
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### [TaskFlow](https://github.com/NoelPOS/taskflow-distributed-job-platform)
-Distributed async job processing across independent services.
-
-- Accepts work immediately and processes it in a separate worker service
-- Event-driven messaging over RabbitMQ with MassTransit
-- Pushes job status to the browser in real time with SignalR, so the client never polls
-
-`.NET 10` `RabbitMQ` `MassTransit` `SignalR`
-<br/>[Code](https://github.com/NoelPOS/taskflow-distributed-job-platform)
-
-</td>
-<td width="50%" valign="top">
-
-### [Fortuner](https://github.com/NoelPOS/Fortuner)
-Full-stack services marketplace with wallet payments and live sessions.
-
-- Discovery and booking flows, plus credit-based payments and a payout lifecycle
-- Real-time sessions over Socket.IO and Stream Video
-- Admin moderation and financial operations tooling
-
-`Next.js 15` `NestJS 11` `PostgreSQL` `Stripe`
-<br/>[Code](https://github.com/NoelPOS/Fortuner)
+<br/>[Live](https://vetmimi-next.vercel.app) · [API](https://github.com/VetMiMi/vetmimi-api) · [Web](https://github.com/VetMiMi/vetmimi-next)
 
 </td>
 </tr>
 </table>
-
-## 🧠 Hard problems, written down
-
-I record significant design decisions as ADRs (architecture decision records). A few I'd point an engineer to first:
-
-| Problem | How I solved it | Read |
-|---|---|---|
-| Two students grab the last seat at the same moment | Holds and bookings share one `seat_claims` table, and a unique key on the seat settles every race. Holds expire lazily, so correctness never waits on a scheduler | [AU-Van ADR-006](https://github.com/NoelPOS/au-van-platform/blob/main/docs/adr/006-seat-claims-single-table-and-lazy-hold-expiry.md) |
-| A flaky network retries "Confirm booking" | Idempotency keys: a retry with the same key returns the stored response byte for byte, and the same key with a different body is refused | [AU-Van ADR-008](https://github.com/NoelPOS/au-van-platform/blob/main/docs/adr/008-exactly-once-booking-creation.md) |
-| A booking saves but its LINE message is lost | Transactional outbox: the notification row commits with the booking, and each retry carries the same LINE retry key, so a phone gets the message at most once | [AU-Van ADR-010](https://github.com/NoelPOS/au-van-platform/blob/main/docs/adr/010-transactional-outbox-and-booking-deadline.md) |
-| Users must never see each other's payment slips | Private bucket, and the API brokers every read and write, so no storage URL or credential ever reaches a browser | [AU-Van ADR-009](https://github.com/NoelPOS/au-van-platform/blob/main/docs/adr/009-payment-proof-storage-and-review-gate.md) |
-| Two clients book overlapping therapy sessions | A PostgreSQL exclusion constraint on each session's time range, buffers included, rejects any overlap no matter how many requests race. A pending request *is* the hold, and a background job expires it | [VetMiMi ADR-004](https://github.com/VetMiMi/vetmimi-api/blob/main/docs/adr/004-postgresql-owns-scheduling.md) |
-| Private video sessions without paying per minute for a video API | Peer-to-peer WebRTC: the Go API only relays offers, answers and ICE candidates over WebSocket, using short-lived room tickets, and a self-hosted coturn relay covers strict networks | [VetMiMi ADR-007](https://github.com/VetMiMi/vetmimi-api/blob/main/docs/adr/007-one-to-one-webrtc-with-go-signaling.md) |
-
-<details>
-<summary><b>🏗️ AU-Van's AWS target architecture</b> (rendered by GitHub from Mermaid)</summary>
-<br/>
-
-```mermaid
-flowchart LR
-  user["Browser or LINE app"] --> cf["CloudFront"]
-  cf -->|"/api/*"| alb["Application Load Balancer"]
-  cf -->|"static assets"| web[("Private S3<br/>web bucket")]
-  alb --> taskA["Spring Boot on Fargate<br/>AZ 1a"]
-  alb --> taskB["Spring Boot on Fargate<br/>AZ 1b"]
-  taskA --> db[("RDS PostgreSQL 17<br/>Multi-AZ")]
-  taskB --> db
-  taskA --> proofs[("Private S3<br/>payment slips")]
-  taskB --> proofs
-  taskA -->|"outbox dispatcher"| line["LINE Messaging API"]
-```
-
-Written in Terraform and applied for an evidence session; the always-on demo runs on EC2 with Docker Compose and continuous deployment. [Details →](https://github.com/NoelPOS/au-van-platform#architecture)
-
-</details>
 
 ## 🛠️ Toolbox
 
