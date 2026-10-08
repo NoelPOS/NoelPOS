@@ -37,7 +37,7 @@ LINE-integrated van seat booking for Assumption University.
 
 - Concurrent seat holds, booking expiry and waitlist promotion, with PostgreSQL constraints as the source of truth
 - Transactional outbox → LINE Flex Message notifications with retries and dead-lettering
-- Terraform on AWS (ECS Fargate across 2 AZs, ALB, RDS Multi-AZ, CloudFront), with 9 CI checks including Playwright
+- AWS target in Terraform (Fargate across 2 AZs, Multi-AZ RDS, CloudFront), proven in an evidence session; live demo on EC2 with CI/CD gated by 9 checks
 
 `Spring Boot` `React` `PostgreSQL` `Terraform` `AWS`
 <br/>[Live demo](https://auvan.duckdns.org) · [Code](https://github.com/NoelPOS/au-van-platform)
@@ -53,7 +53,7 @@ Booking and online sessions for an art therapy practice in Sydney.
 - Bilingual Next.js site (English and Burmese) plus an admin console, with background jobs on Redis
 
 `Go` `Next.js` `PostgreSQL` `Redis` `WebRTC`
-<br/>[Live](https://vetmimi-next.vercel.app) · [API](https://github.com/VetMiMi/vetmimi-api) · [Web](https://github.com/VetMiMi/vetmimi-next)
+<br/>[Live](https://vetmimi-arts-therapy.vercel.app) · [API](https://github.com/VetMiMi/vetmimi-api) · [Web](https://github.com/VetMiMi/vetmimi-next)
 
 </td>
 </tr>
