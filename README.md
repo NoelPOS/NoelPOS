@@ -17,7 +17,7 @@
 I build backends that stay correct under pressure: bookings that can't be oversold, payments that can't be charged twice, and notifications that arrive exactly once. I've spent 2+ years shipping and running production platforms, and I write down the decisions behind them.
 
 **Right now**
-- 💼 Software Developer at **EffortX Foundation**, on a platform with 1,000+ users
+- 💼 Software Developer at **EffortX Foundation**
 - 🛠️ Building **[VetMiMi](https://vetmimi-next.vercel.app)**: booking and WebRTC video sessions on a Go API
 - 🤝 Open to **backend and full-stack engineering roles**
 
