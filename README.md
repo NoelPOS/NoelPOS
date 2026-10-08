@@ -57,27 +57,29 @@ Booking and online sessions for an art therapy practice in Sydney.
 
 </td>
 </tr>
+<tr>
+<td colspan="2" valign="top">
+
+### Kiddee Lab LMS <sub>· production · private codebase</sub>
+The learning management system and CRM that runs Kiddee Lab, a coding and robotics school for kids in Bangkok. I built and maintained it for a year.
+
+- Replaced paper-based workflows for **800+ users**: students, parents, class scheduling, courses, enrolment and CRM
+- Migrated and reconciled **10,000+ legacy records** into the new system, with validation so nothing was lost
+- Also built the school's public landing page → [kiddeelab.co.th](https://www.kiddeelab.co.th)
+
+`Next.js` `NestJS` `TypeORM` `PostgreSQL` `Docker`
+
+</td>
+</tr>
 </table>
 
 ## 🛠️ Toolbox
 
-<p>
-  <img src="https://skillicons.dev/icons?i=ts,java,cs,go,py&perline=12" alt="TypeScript, Java, C#, Go, Python" /><br/>
-  <img src="https://skillicons.dev/icons?i=nestjs,spring,dotnet,nodejs,react,nextjs,prisma&perline=12" alt="NestJS, Spring, .NET, Node.js, React, Next.js, Prisma" /><br/>
-  <img src="https://skillicons.dev/icons?i=postgres,mysql,mongodb,redis,rabbitmq&perline=12" alt="PostgreSQL, MySQL, MongoDB, Redis, RabbitMQ" /><br/>
-  <img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,terraform,nginx,githubactions&perline=12" alt="AWS, Docker, Kubernetes, Terraform, Nginx, GitHub Actions" />
-</p>
-
-<details>
-<summary><b>More projects</b></summary>
-<br/>
-
-| Project | What it is | Stack |
-|---|---|---|
-| [Kiddee Lab LMS](https://github.com/Kiddee-Lab-Company-Limited) | Production LMS/CRM that replaced paper workflows for 800+ users ([web](https://github.com/Kiddee-Lab-Company-Limited/kdl-frontend), [api](https://github.com/Kiddee-Lab-Company-Limited/kdl-backend)) | Next.js · NestJS · PostgreSQL |
-| [CodePilot](https://github.com/NoelPOS/codepilot) | AI prompt-to-code workspace with live Sandpack preview and a bring-your-own-key model | Next.js · Convex · Gemini |
-| [Disease Predictor](https://github.com/NoelPOS/disease-predictor) | Compares ML classifiers for predicting a disease from symptoms | Python · ML · ONNX |
-| [Conserve](https://github.com/NoelPOS/Conserve-App) | Hackathon app that helps people cut their carbon footprint (TriValley Hackathon) | React Native · Express · MongoDB |
-| [100 Days of DevOps](https://github.com/NoelPOS/KobeCloud_100_Days_of_Devops) | Lab notes from the KodeKloud 100 Days of DevOps challenge | Linux · Docker · K8s |
-
-</details>
+| Area | Tools |
+|---|---|
+| **Languages** | TypeScript · Java · C# · Go · Python |
+| **Backend** | NestJS · Spring Boot · ASP.NET Core · Node.js |
+| **Frontend** | React · Next.js · React Native |
+| **Data** | PostgreSQL · Redis · MongoDB · MySQL · RabbitMQ |
+| **Cloud & DevOps** | AWS · Docker · Terraform · GitHub Actions · Nginx |
+| **Testing** | Playwright · Testcontainers · JUnit · Robot Framework |
