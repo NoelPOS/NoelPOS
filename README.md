@@ -4,15 +4,6 @@
   <img alt="Terminal: I build backends that stay correct under pressure. curl -i localhost:8080/v1/engineers/noel returns HTTP 200 with JSON describing Noel Paing Oak Soe, a Software Engineer at EffortX Foundation in Bangkok focused on backend, distributed systems, cloud and reliability, currently building VetMiMi, open to work." src="./assets/hello-dark.svg" width="100%" />
 </picture>
 
-<br />
-
-<p align="center">
-  <a href="https://noelpos-dev.vercel.app"><img src="https://img.shields.io/badge/portfolio-noelpos--dev.vercel.app-2ea043?style=flat-square&labelColor=30363d&logo=vercel&logoColor=white" alt="Portfolio" /></a>&nbsp;
-  <a href="https://www.linkedin.com/in/noelpos"><img src="https://img.shields.io/badge/linkedin-in%2Fnoelpos-2ea043?style=flat-square&labelColor=30363d&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>&nbsp;
-  <a href="mailto:noelpaingoaksoe@gmail.com"><img src="https://img.shields.io/badge/email-noelpaingoaksoe%40gmail.com-2ea043?style=flat-square&labelColor=30363d&logo=gmail&logoColor=white" alt="Email" /></a>
-</p>
-
-<br />
 
 ## `~/projects`
 
@@ -64,3 +55,11 @@ Booking and online sessions for an art therapy practice in Sydney.
   <source media="(prefers-color-scheme: light)" srcset="./assets/neofetch-light.svg" />
   <img alt="neofetch-style card: a halftone portrait of Noel beside his stack - TypeScript, Java, Go, C#, Python; NestJS, Spring Boot, ASP.NET Core; React, Next.js; PostgreSQL, Redis, MongoDB, RabbitMQ; AWS, Docker, Terraform, GitHub Actions; Playwright, Testcontainers, JUnit - and live GitHub stats, refreshed daily." src="./assets/neofetch-dark.svg" width="100%" />
 </picture>
+
+## `~/contact`
+
+<p>
+  <a href="https://noelpos-dev.vercel.app"><img src="https://img.shields.io/badge/portfolio-noelpos--dev.vercel.app-2ea043?style=flat-square&labelColor=30363d&logo=vercel&logoColor=white" alt="Portfolio" /></a>&nbsp;
+  <a href="https://www.linkedin.com/in/noelpos"><img src="https://img.shields.io/badge/linkedin-in%2Fnoelpos-2ea043?style=flat-square&labelColor=30363d&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>&nbsp;
+  <a href="mailto:noelpaingoaksoe@gmail.com"><img src="https://img.shields.io/badge/email-noelpaingoaksoe%40gmail.com-2ea043?style=flat-square&labelColor=30363d&logo=gmail&logoColor=white" alt="Email" /></a>
+</p>
