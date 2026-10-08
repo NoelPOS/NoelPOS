@@ -63,5 +63,5 @@ Booking and online sessions for an art therapy practice in Sydney.
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/neofetch-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="./assets/neofetch-light.svg" />
-  <img alt="neofetch-style card: a dot-matrix portrait of Noel beside his stack - TypeScript, Java, Go, C#, Python; NestJS, Spring Boot, ASP.NET Core; React, Next.js; PostgreSQL, Redis, MongoDB, RabbitMQ; AWS, Docker, Terraform, GitHub Actions; Playwright, Testcontainers, JUnit - and live GitHub stats, refreshed daily." src="./assets/neofetch-dark.svg" width="100%" />
+  <img alt="neofetch-style card: a halftone portrait of Noel beside his stack - TypeScript, Java, Go, C#, Python; NestJS, Spring Boot, ASP.NET Core; React, Next.js; PostgreSQL, Redis, MongoDB, RabbitMQ; AWS, Docker, Terraform, GitHub Actions; Playwright, Testcontainers, JUnit - and live GitHub stats, refreshed daily." src="./assets/neofetch-dark.svg" width="100%" />
 </picture>
