@@ -14,33 +14,22 @@
 
 ---
 
-```ts
-const noel = {
-  role:       "Software Developer @ EffortX Foundation",
-  experience: "2+ years building and running production web platforms",
-  focus:      ["backend architecture", "event-driven systems", "cloud & reliability", "auth & security"],
-  shipping:   "VetMiMi — booking and WebRTC video sessions (Go + Next.js)",
-  education:  "B.Sc. Computer Science, Assumption University (GPA 3.88 / 4.00)",
-  openTo:     "backend and full-stack engineering roles",
-};
-```
+I build backends that stay correct under pressure: bookings that can't be oversold, payments that can't be charged twice, and notifications that arrive exactly once. I've spent 2+ years shipping and running production platforms, and I write down the decisions behind them.
 
-## 🧭 Career, as a git log
+**Right now**
+- 💼 Software Developer at **EffortX Foundation**, on a platform with 1,000+ users
+- 🛠️ Building **[VetMiMi](https://vetmimi-next.vercel.app)**: booking and WebRTC video sessions on a Go API
+- 🤝 Open to **backend and full-stack engineering roles**
 
-```console
-$ git log --graph --oneline career
+## 💼 Experience
 
-*   e7f0x12 (HEAD -> main) Software Developer @ EffortX Foundation · remote, AU        2025-09 → now
-|\            Next.js · React Native · NestJS · PostgreSQL · Redis/BullMQ
-| |           ↳ p95 API latency 850 ms → 350 ms · 1,000+ users · RBAC, JWT, MFA/TOTP
-| * k8t9b07 QA Automation Intern @ KBTG (Kasikorn Business-Technology Group)       2026-07 → 2026-09
-|/            Robot Framework · Python · SIT / UAT / regression suites for financial apps
-* kd1ab04 Full Stack Developer @ Kiddee Lab Thailand · hybrid                     2025-04 → 2026-03
-|             React · Java · PostgreSQL — LMS/CRM for 800+ users, 10,000+ legacy records migrated
-* au3web2 WordPress Developer + Teaching Assistant @ Assumption University        2023-06 → 2025-06
-|             Unified vms/vme → vmes.au.edu for 1,000+ students · mentored 20+ students in DSA & OOP
-* 0c5init init: B.Sc. Computer Science @ Assumption University                     2022-11
-```
+| When | Role | Highlights |
+|---|---|---|
+| **Sep 2025 – now** | **Software Developer** · [EffortX Foundation](https://www.effort.foundation) · remote | Next.js, React Native, NestJS and PostgreSQL for 1,000+ users · Redis/BullMQ background jobs · RBAC, JWT and MFA/TOTP · **cut p95 API latency from 850 ms to 350 ms** |
+| **Jul – Sep 2026** | **QA Automation Intern** · KBTG (Kasikorn Business-Technology Group) | Robot Framework and Python suites for SIT, UAT and regression testing of enterprise financial apps |
+| **Apr 2025 – Mar 2026** | **Full Stack Developer** · [Kiddee Lab Thailand](https://www.kiddeelab.co.th) | LMS/CRM that replaced paper workflows for **800+ users** · migrated and reconciled **10,000+ legacy records** |
+| **Jun 2023 – Jun 2025** | **WordPress Developer & Teaching Assistant** · Assumption University | Merged two legacy sites into one platform for 1,000+ students · mentored 20+ students in DSA and OOP |
+| **2022 – 2026** | **B.Sc. Computer Science** · Assumption University | GPA **3.88 / 4.00** |
 
 ## 🚀 Featured work
 
@@ -53,12 +42,27 @@ LINE-integrated van seat booking for Assumption University.
 
 - Concurrent seat holds, booking expiry and waitlist promotion, with PostgreSQL constraints as the source of truth
 - Transactional outbox → LINE Flex Message notifications with retries and dead-lettering
-- Terraform on AWS (ECS Fargate across 2 AZs, ALB, RDS Multi-AZ, CloudFront), with 8 CI gates including Playwright
+- Terraform on AWS (ECS Fargate across 2 AZs, ALB, RDS Multi-AZ, CloudFront), with 9 CI checks including Playwright
 
 `Spring Boot` `React` `PostgreSQL` `Terraform` `AWS`
-<br/>[Live demo](https://auvan.duckdns.org) · [Code](https://github.com/NoelPOS/au-van-platform)
+<br/>[Live demo](https://auvan.duckdns.org) · [Code](https://github.com/NoelPOS/au-van-platform) · [15 ADRs](https://github.com/NoelPOS/au-van-platform/tree/main/docs/adr)
 
 </td>
+<td width="50%" valign="top">
+
+### [VetMiMi](https://github.com/VetMiMi) <sub>· in development</sub>
+Booking and online sessions for an art therapy practice in Sydney.
+
+- Go API: appointment booking, content management, media and email, with an OpenAPI-first design
+- One-to-one WebRTC video sessions with Go signaling, TURN, and MFA/TOTP for the admin
+- Bilingual Next.js site (English and Burmese) plus an admin console, with background jobs on Redis
+
+`Go` `Next.js` `PostgreSQL` `Redis` `WebRTC`
+<br/>[Live](https://vetmimi-next.vercel.app) · [API](https://github.com/VetMiMi/vetmimi-api) · [Web](https://github.com/VetMiMi/vetmimi-next) · [9 ADRs](https://github.com/VetMiMi/vetmimi-api/tree/main/docs/adr)
+
+</td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 
 ### [TaskFlow](https://github.com/NoelPOS/taskflow-distributed-job-platform)
@@ -72,8 +76,6 @@ Distributed async job processing across independent services.
 <br/>[Code](https://github.com/NoelPOS/taskflow-distributed-job-platform)
 
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 
 ### [Fortuner](https://github.com/NoelPOS/Fortuner)
@@ -87,21 +89,52 @@ Full-stack services marketplace with wallet payments and live sessions.
 <br/>[Code](https://github.com/NoelPOS/Fortuner)
 
 </td>
-<td width="50%" valign="top">
-
-### [VetMiMi](https://github.com/VetMiMi) <sub>· in development</sub>
-Booking and online sessions for an art therapy practice in Sydney.
-
-- Go API: appointment booking, content management, media and email, with an OpenAPI-first design
-- WebRTC video sessions with WebSocket signaling, TURN, and MFA/TOTP for the admin
-- Bilingual Next.js site (English and Burmese) plus an admin console, with background jobs on Redis
-
-`Go` `Next.js` `PostgreSQL` `Redis` `WebRTC` `AWS S3`
-<br/>[Live](https://vetmimi-next.vercel.app) · [API](https://github.com/VetMiMi/vetmimi-api) · [Web](https://github.com/VetMiMi/vetmimi-next)
-
-</td>
 </tr>
 </table>
+
+## 🧠 Hard problems, written down
+
+I record significant design decisions as ADRs (architecture decision records). A few I'd point an engineer to first:
+
+| Problem | How I solved it | Read |
+|---|---|---|
+| Two students grab the last seat at the same moment | Holds and bookings share one `seat_claims` table, and a unique key on the seat settles every race. Holds expire lazily, so correctness never waits on a scheduler | [AU-Van ADR-006](https://github.com/NoelPOS/au-van-platform/blob/main/docs/adr/006-seat-claims-single-table-and-lazy-hold-expiry.md) |
+| A flaky network retries "Confirm booking" | Idempotency keys: a retry with the same key returns the stored response byte for byte, and the same key with a different body is refused | [AU-Van ADR-008](https://github.com/NoelPOS/au-van-platform/blob/main/docs/adr/008-exactly-once-booking-creation.md) |
+| A booking saves but its LINE message is lost | Transactional outbox: the notification row commits with the booking, and each retry carries the same LINE retry key, so a phone gets the message at most once | [AU-Van ADR-010](https://github.com/NoelPOS/au-van-platform/blob/main/docs/adr/010-transactional-outbox-and-booking-deadline.md) |
+| Users must never see each other's payment slips | Private bucket, and the API brokers every read and write, so no storage URL or credential ever reaches a browser | [AU-Van ADR-009](https://github.com/NoelPOS/au-van-platform/blob/main/docs/adr/009-payment-proof-storage-and-review-gate.md) |
+| Two clients book overlapping therapy sessions | A PostgreSQL exclusion constraint on each session's time range, buffers included, rejects any overlap no matter how many requests race. A pending request *is* the hold, and a background job expires it | [VetMiMi ADR-004](https://github.com/VetMiMi/vetmimi-api/blob/main/docs/adr/004-postgresql-owns-scheduling.md) |
+| Private video sessions without paying per minute for a video API | Peer-to-peer WebRTC: the Go API only relays offers, answers and ICE candidates over WebSocket, using short-lived room tickets, and a self-hosted coturn relay covers strict networks | [VetMiMi ADR-007](https://github.com/VetMiMi/vetmimi-api/blob/main/docs/adr/007-one-to-one-webrtc-with-go-signaling.md) |
+
+<details>
+<summary><b>🏗️ AU-Van's AWS target architecture</b> (rendered by GitHub from Mermaid)</summary>
+<br/>
+
+```mermaid
+flowchart LR
+  user["Browser or LINE app"] --> cf["CloudFront"]
+  cf -->|"/api/*"| alb["Application Load Balancer"]
+  cf -->|"static assets"| web[("Private S3<br/>web bucket")]
+  alb --> taskA["Spring Boot on Fargate<br/>AZ 1a"]
+  alb --> taskB["Spring Boot on Fargate<br/>AZ 1b"]
+  taskA --> db[("RDS PostgreSQL 17<br/>Multi-AZ")]
+  taskB --> db
+  taskA --> proofs[("Private S3<br/>payment slips")]
+  taskB --> proofs
+  taskA -->|"outbox dispatcher"| line["LINE Messaging API"]
+```
+
+Written in Terraform and applied for an evidence session; the always-on demo runs on EC2 with Docker Compose and continuous deployment. [Details →](https://github.com/NoelPOS/au-van-platform#architecture)
+
+</details>
+
+## 🛠️ Toolbox
+
+<p>
+  <img src="https://skillicons.dev/icons?i=ts,java,cs,go,py&perline=12" alt="TypeScript, Java, C#, Go, Python" /><br/>
+  <img src="https://skillicons.dev/icons?i=nestjs,spring,dotnet,nodejs,react,nextjs,prisma&perline=12" alt="NestJS, Spring, .NET, Node.js, React, Next.js, Prisma" /><br/>
+  <img src="https://skillicons.dev/icons?i=postgres,mysql,mongodb,redis,rabbitmq&perline=12" alt="PostgreSQL, MySQL, MongoDB, Redis, RabbitMQ" /><br/>
+  <img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,terraform,nginx,githubactions&perline=12" alt="AWS, Docker, Kubernetes, Terraform, Nginx, GitHub Actions" />
+</p>
 
 <details>
 <summary><b>More projects</b></summary>
@@ -116,22 +149,3 @@ Booking and online sessions for an art therapy practice in Sydney.
 | [100 Days of DevOps](https://github.com/NoelPOS/KobeCloud_100_Days_of_Devops) | Lab notes from the KodeKloud 100 Days of DevOps challenge | Linux · Docker · K8s |
 
 </details>
-
-## 🛠️ Toolbox
-
-<p>
-  <img src="https://skillicons.dev/icons?i=ts,java,cs,py,go&perline=12" alt="Languages" /><br/>
-  <img src="https://skillicons.dev/icons?i=nestjs,spring,dotnet,nodejs,react,nextjs,prisma&perline=12" alt="Frameworks" /><br/>
-  <img src="https://skillicons.dev/icons?i=postgres,mysql,mongodb,redis,rabbitmq&perline=12" alt="Data and messaging" /><br/>
-  <img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,terraform,nginx,githubactions&perline=12" alt="Cloud and DevOps" />
-</p>
-
-**Things I've built in production:** idempotent APIs · retry and failure handling · transactional outbox · background jobs (BullMQ) · caching and query tuning · RBAC, JWT, sessions, MFA/TOTP, step-up auth · rate limiting · structured logging and health checks · unit, integration and E2E tests (Playwright, Robot Framework)
-
-## 📈 Activity
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/NoelPOS/NoelPOS/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/NoelPOS/NoelPOS/output/github-contribution-grid-snake.svg" />
-  <img alt="Contribution snake animation" src="https://raw.githubusercontent.com/NoelPOS/NoelPOS/output/github-contribution-grid-snake.svg" />
-</picture>
