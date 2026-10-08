@@ -1,0 +1,40 @@
+name: Refresh profile cards
+
+on:
+  schedule:
+    - cron: "0 17 * * *" # 00:00 in Bangkok
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/generate.py
+      - data/portrait.json
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cards
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Render cards
+        run: python3 scripts/generate.py
+
+      - name: Commit if anything changed
+        run: |
+          if git diff --quiet -- assets data; then
+            echo "Cards unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets data
+          git commit -m "Refresh profile cards"
+          git push

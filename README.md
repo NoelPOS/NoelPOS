@@ -1,9 +1,8 @@
-<h1 align="center">Noel Paing Oak Soe</h1>
-
-<p align="center">
-  <b>Software Engineer · Backend &amp; Distributed Systems</b><br/>
-  <sub>Event-driven systems, cloud infrastructure and reliability — owned from design to production.</sub>
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/hello-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/hello-light.svg" />
+  <img alt="Terminal: curl -i localhost:8080/v1/engineers/noel returns HTTP 200 with JSON describing Noel Paing Oak Soe, a Software Engineer at EffortX Foundation in Bangkok focused on backend, distributed systems, cloud and reliability, currently building VetMiMi, open to work." src="./assets/hello-dark.svg" width="100%" />
+</picture>
 
 <p align="center">
   <a href="https://noelpos-dev.vercel.app"><img src="https://img.shields.io/badge/Portfolio-noelpos--dev.vercel.app-2F81F7?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio" /></a>
@@ -22,7 +21,7 @@ I build backends that stay correct under pressure: bookings that can't be overso
 |---|---|---|
 | **Sep 2025 – now** | **Software Developer** · [EffortX Foundation](https://www.effort.foundation) · remote | Next.js, React Native, NestJS and PostgreSQL · Redis/BullMQ background jobs · RBAC, JWT and MFA/TOTP · **cut p95 API latency from 850 ms to 350 ms** |
 | **Jul – Sep 2026** | **QA Automation Intern** · KBTG (Kasikorn Business-Technology Group) | Robot Framework and Python suites for SIT, UAT and regression testing of enterprise financial apps |
-| **Apr 2025 – Mar 2026** | **Full Stack Developer** · [Kiddee Lab Thailand](https://www.kiddeelab.co.th) | LMS/CRM that replaced paper workflows for **800+ users** · migrated and reconciled **10,000+ legacy records** |
+| **Apr 2025 – Mar 2026** | **Full Stack Developer** · [Kiddee Lab Thailand](https://www.kiddeelab.co.th) | LMS/CRM that replaced paper workflows for **800+ users** · migrated and reconciled **10,000+ legacy records** · built the public site [kiddeelab.co.th](https://www.kiddeelab.co.th) |
 | **Jun 2023 – Jun 2025** | **WordPress Developer & Teaching Assistant** · Assumption University | Merged two legacy sites into one platform for 1,000+ students · mentored 20+ students in DSA and OOP |
 | **2022 – 2026** | **B.Sc. Computer Science** · Assumption University | GPA **3.88 / 4.00** |
 
@@ -57,29 +56,12 @@ Booking and online sessions for an art therapy practice in Sydney.
 
 </td>
 </tr>
-<tr>
-<td colspan="2" valign="top">
-
-### Kiddee Lab LMS <sub>· production · private codebase</sub>
-The learning management system and CRM that runs Kiddee Lab, a coding and robotics school for kids in Bangkok. I built and maintained it for a year.
-
-- Replaced paper-based workflows for **800+ users**: students, parents, class scheduling, courses, enrolment and CRM
-- Migrated and reconciled **10,000+ legacy records** into the new system, with validation so nothing was lost
-- Also built the school's public landing page → [kiddeelab.co.th](https://www.kiddeelab.co.th)
-
-`Next.js` `NestJS` `TypeORM` `PostgreSQL` `Docker`
-
-</td>
-</tr>
 </table>
 
-## 🛠️ Toolbox
+## 🖥️ `neofetch`
 
-| Area | Tools |
-|---|---|
-| **Languages** | TypeScript · Java · C# · Go · Python |
-| **Backend** | NestJS · Spring Boot · ASP.NET Core · Node.js |
-| **Frontend** | React · Next.js · React Native |
-| **Data** | PostgreSQL · Redis · MongoDB · MySQL · RabbitMQ |
-| **Cloud & DevOps** | AWS · Docker · Terraform · GitHub Actions · Nginx |
-| **Testing** | Playwright · Testcontainers · JUnit · Robot Framework |
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/neofetch-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/neofetch-light.svg" />
+  <img alt="neofetch-style card: a dot-matrix portrait of Noel beside his stack - TypeScript, Java, Go, C#, Python; NestJS, Spring Boot, ASP.NET Core; React, Next.js; PostgreSQL, Redis, MongoDB, RabbitMQ; AWS, Docker, Terraform, GitHub Actions; Playwright, Testcontainers, JUnit - and live GitHub stats, refreshed daily." src="./assets/neofetch-dark.svg" width="100%" />
+</picture>
