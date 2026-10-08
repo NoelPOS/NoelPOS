@@ -1,9 +1,8 @@
 <h1 align="center">Noel Paing Oak Soe</h1>
 
 <p align="center">
-  <a href="https://noelpos-dev.vercel.app">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=18&duration=2800&pause=900&color=2F81F7&center=true&vCenter=true&width=640&lines=Software+Engineer+%C2%B7+Backend+%26+Distributed+Systems;Event-driven+systems+%C2%B7+cloud+%C2%B7+reliability;I+own+features+from+design+to+production" alt="Software Engineer · Backend & Distributed Systems" />
-  </a>
+  <b>Software Engineer · Backend &amp; Distributed Systems</b><br/>
+  <sub>Event-driven systems, cloud infrastructure and reliability — owned from design to production.</sub>
 </p>
 
 <p align="center">
