@@ -137,7 +137,9 @@ def hello(t):
         kv("open_to_work", "true", b, comma=False),
         [("}", tx)],
     ]
-    parts = [prompt(t, x, y, "curl -i localhost:8080/v1/engineers/noel")]
+    parts = [line(x, y, [("# I build backends that stay correct under pressure.", t["muted"])])]
+    y += LH
+    parts.append(prompt(t, x, y, "curl -i localhost:8080/v1/engineers/noel"))
     for row in rows:
         y += LH
         if row:

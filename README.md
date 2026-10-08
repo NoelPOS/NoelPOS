@@ -1,31 +1,20 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/hello-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="./assets/hello-light.svg" />
-  <img alt="Terminal: curl -i localhost:8080/v1/engineers/noel returns HTTP 200 with JSON describing Noel Paing Oak Soe, a Software Engineer at EffortX Foundation in Bangkok focused on backend, distributed systems, cloud and reliability, currently building VetMiMi, open to work." src="./assets/hello-dark.svg" width="100%" />
+  <img alt="Terminal: I build backends that stay correct under pressure. curl -i localhost:8080/v1/engineers/noel returns HTTP 200 with JSON describing Noel Paing Oak Soe, a Software Engineer at EffortX Foundation in Bangkok focused on backend, distributed systems, cloud and reliability, currently building VetMiMi, open to work." src="./assets/hello-dark.svg" width="100%" />
 </picture>
 
+<br />
+
 <p align="center">
-  <a href="https://noelpos-dev.vercel.app"><img src="https://img.shields.io/badge/Portfolio-noelpos--dev.vercel.app-2F81F7?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio" /></a>
-  <a href="https://www.linkedin.com/in/noelpos"><img src="https://img.shields.io/badge/LinkedIn-noelpos-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-  <a href="mailto:noelpaingoaksoe@gmail.com"><img src="https://img.shields.io/badge/Email-noelpaingoaksoe%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
-  <img src="https://img.shields.io/badge/Based_in-Bangkok%2C_TH-6E7681?style=flat-square" alt="Bangkok, Thailand" />
+  <a href="https://noelpos-dev.vercel.app"><img src="https://img.shields.io/badge/portfolio-noelpos--dev.vercel.app-2ea043?style=flat-square&labelColor=30363d&logo=vercel&logoColor=white" alt="Portfolio" /></a>&nbsp;
+  <a href="https://www.linkedin.com/in/noelpos"><img src="https://img.shields.io/badge/linkedin-in%2Fnoelpos-2ea043?style=flat-square&labelColor=30363d&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>&nbsp;
+  <a href="mailto:noelpaingoaksoe@gmail.com"><img src="https://img.shields.io/badge/email-noelpaingoaksoe%40gmail.com-2ea043?style=flat-square&labelColor=30363d&logo=gmail&logoColor=white" alt="Email" /></a>
 </p>
 
----
+<br />
 
-I build backends that stay correct under pressure: bookings that can't be oversold, payments that can't be charged twice, and notifications that arrive exactly once. I've spent 2+ years shipping and running production platforms, from design through deployment and on-call debugging.
-
-## 💼 Experience
-
-| When | Role | Highlights |
-|---|---|---|
-| **Sep 2025 – now** | **Software Developer** · [EffortX Foundation](https://www.effort.foundation) · remote | Next.js, React Native, NestJS and PostgreSQL · Redis/BullMQ background jobs · RBAC, JWT and MFA/TOTP · **cut p95 API latency from 850 ms to 350 ms** |
-| **Jul – Sep 2026** | **QA Automation Intern** · KBTG (Kasikorn Business-Technology Group) | Robot Framework and Python suites for SIT, UAT and regression testing of enterprise financial apps |
-| **Apr 2025 – Mar 2026** | **Full Stack Developer** · [Kiddee Lab Thailand](https://www.kiddeelab.co.th) | LMS/CRM that replaced paper workflows for **800+ users** · migrated and reconciled **10,000+ legacy records** · built the public site [kiddeelab.co.th](https://www.kiddeelab.co.th) |
-| **Jun 2023 – Jun 2025** | **WordPress Developer & Teaching Assistant** · Assumption University | Merged two legacy sites into one platform for 1,000+ students · mentored 20+ students in DSA and OOP |
-| **2022 – 2026** | **B.Sc. Computer Science** · Assumption University | GPA **3.88 / 4.00** |
-
-## 🚀 Featured work
+## `~/projects`
 
 <table>
 <tr>
@@ -58,7 +47,17 @@ Booking and online sessions for an art therapy practice in Sydney.
 </tr>
 </table>
 
-## 🖥️ `neofetch`
+## `~/experience`
+
+| When | Role | What I did |
+|---|---|---|
+| **Sep 2025 – now** | **Software Developer** · [EffortX Foundation](https://www.effort.foundation) · remote | Next.js, React Native, NestJS and PostgreSQL · Redis/BullMQ background jobs · RBAC, JWT and MFA/TOTP · **cut p95 API latency from 850 ms to 350 ms** |
+| **Jul – Sep 2026** | **QA Automation Intern** · KBTG (Kasikorn Business-Technology Group) | Robot Framework and Python suites for SIT, UAT and regression testing of enterprise financial apps |
+| **Apr 2025 – Mar 2026** | **Full Stack Developer** · [Kiddee Lab Thailand](https://www.kiddeelab.co.th) | LMS/CRM that replaced paper workflows for **800+ users** · migrated and reconciled **10,000+ legacy records** · built the public site [kiddeelab.co.th](https://www.kiddeelab.co.th) |
+| **Jun 2023 – Jun 2025** | **WordPress Developer & Teaching Assistant** · Assumption University | Merged two legacy sites into one platform for 1,000+ students · mentored 20+ students in DSA and OOP |
+| **2022 – 2026** | **B.Sc. Computer Science** · Assumption University | GPA **3.88 / 4.00** |
+
+## `~/stack`
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/neofetch-dark.svg" />
